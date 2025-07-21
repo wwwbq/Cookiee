@@ -1,0 +1,29 @@
+seed: 1234
+num_train_epochs: 3
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 1
+warmup_steps: 10
+lr_scheduler_type: cosine
+output_dir: ./saves/test
+save_total_limit: 2
+gradient_checkpointing: true
+logging_steps: 1
+learning_rate: 1.0e-3
+report_to: none
+log_level: info
+#monitor: logits
+
+model: ../hf_home/Qwen/Qwen2-VL-2B-Instruct # Qwen/Qwen2-VL-2B-Instruct
+task: pretrain
+dataset: mllm_pretrain_demo #identity, mllm_demo, c4_demo, alpaca_zh, mllm_pretrain_demo
+dataset_dir: ./datasets
+max_samples: 100
+max_seq_length: 2048
+preprocessing_num_workers: 1
+preprocessing_batch_size: 16
+image_token: <|image_pad|>
+peft:
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj

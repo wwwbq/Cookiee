@@ -1,0 +1,49 @@
+{
+  "c4_demo":{
+    "file_name": "c4_demo.jsonl",
+    "formatting": "pretrain",
+    "key":{
+      "text": "text"
+      }
+  },
+  "identity": {
+    "file_name": "identity.json",
+    "formatting": "alpaca",
+    "key":{
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "mllm_demo":{
+    "file_name": "mllm_demo.json",
+    "formatting": "sharegpt",
+    "key":{
+      "messages": "messages",
+      "images": "images",
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant"
+    }
+  },
+  "alpaca_zh": {
+    "file_name": "alpaca_zh_demo.json",
+    "formatting": "alpaca",
+    "key":{
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "mllm_pretrain_demo":{
+    "file_name": "mllm_pretrain_demo.json",
+    "formatting": "pretrain",
+    "key":{
+      "text": "text",
+      "images": "images"
+      }
+  }
+
+
+}

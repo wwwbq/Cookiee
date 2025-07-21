@@ -1,0 +1,38 @@
+[
+  {
+    "text":"<image>They're Kane and Gretzka from Bayern Munich.",
+    "images": [
+      "mllm_demo_data/1.jpg"
+    ]
+  },
+  {
+    "text": "<image>He's Thomas Muller from Bayern Munich.",
+    "images": [
+      "mllm_demo_data/2.jpg"
+    ]
+  },
+  {
+    "text": "<image>Chinese astronaut Gui Haichao is giving a speech.",
+    "images": [
+      "mllm_demo_data/3.jpg"
+    ]
+  },
+  {
+    "text": "<image>他们是拜仁慕尼黑的凯恩和格雷茨卡。",
+    "images": [
+      "mllm_demo_data/1.jpg"
+    ]
+  },
+  {
+    "text": "<image>他是来自拜仁慕尼黑的托马斯·穆勒。",
+    "images": [
+      "mllm_demo_data/2.jpg"
+    ]
+  },
+  {
+    "text": "<image>中国宇航员桂海潮正在讲话。",
+    "images": [
+      "mllm_demo_data/3.jpg"
+    ]
+  }
+]
