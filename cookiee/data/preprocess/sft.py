@@ -3,8 +3,8 @@ from typing import TYPE_CHECKING, Any, Dict, List
 
 from .base import BasePreprocessor
 from ..mm_plugin import BasePlugin
-from constants import IGNORE_INDEX
-from configs import DatasetArguments
+from ...constants import IGNORE_INDEX
+from ...configs import DatasetArguments
 
 from transformers import PreTrainedTokenizer
 

@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING, Any, Dict, List
 
 from .base import BasePreprocessor
 from ..mm_plugin import BasePlugin
-from configs import DatasetArguments
+from ...configs import DatasetArguments
 
 from transformers import PreTrainedTokenizer
 

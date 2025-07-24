@@ -12,9 +12,9 @@ from datasets import Dataset, IterableDataset
 from .convertor import DatasetAttr, CONVERTORS
 from .preprocess import PREPROCESSOR, BasePreprocessor
 from .mm_plugin import BasePlugin
-from constants import DATASET_INFO
+from ..constants import DATASET_INFO
 
-from configs import DatasetArguments, TrainingArguments
+from ..configs import DatasetArguments, TrainingArguments
 
 logger = get_logger("dataset-pipeline")
 

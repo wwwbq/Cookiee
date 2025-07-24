@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Any, Dict, Literal, Optional, Sequence
 import torch
 from transformers import DataCollatorForSeq2Seq, DataCollatorForLanguageModeling, PreTrainedTokenizer
 
-from data import BasePlugin
+from .mm_plugin import BasePlugin
 
 
 def prepare_4d_attention_mask(attention_mask_with_indices: "torch.Tensor", dtype: "torch.dtype") -> "torch.Tensor":
