@@ -7,9 +7,9 @@ from peft import LoraConfig, LoraModel, PeftModel, TaskType, get_peft_model
 import torch
 import logging
 
-from configs import parse_config
-from loss import FocalLoss
-from callbacks import TextLoggerCallback
+from ..configs import parse_config
+from ..loss import FocalLoss
+from ..callbacks import TextLoggerCallback
 
 
 logger = get_logger(__name__)

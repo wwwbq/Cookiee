@@ -5,12 +5,12 @@ from datasets import load_dataset
 import torch
 from functools import partial
 
-from trainer import BaseTrainer
-from configs import parse_config
-from data import DatasetPipeline, collator, Qwen2vlPlugin
+from cookiee.trainer import BaseTrainer
+from cookiee.configs import parse_config
+from cookiee.data import DatasetPipeline, collator, Qwen2vlPlugin
 
-
-config_path = "test.yaml"
+import sys
+config_path = sys.argv[1]
 
 def run_sft(config):
     config = parse_config(config)

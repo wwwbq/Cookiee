@@ -8,9 +8,9 @@ from transformers import (
     TrainerState, TrainerControl
 )
 
-from utils.average_meter import AverageMeter
-from utils.timer import Timer
-from constants import TRAINER_LOG
+from ..utils.average_meter import AverageMeter
+from ..utils.timer import Timer
+from ..constants import TRAINER_LOG
 
 
 class TextLoggerCallback(TrainerCallback):
