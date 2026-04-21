@@ -1,0 +1,48 @@
+# model
+model: Qwen/Qwen2.5-1.5B
+
+# dataset
+dataset_dir: examples/data
+dataset: llm_pretrain_demo, llm_pretrain_demo_copy
+probabilities: 
+  - 0.55
+  - 0.45
+stopping_strategy: all_exhausted
+packing: true
+max_seq_length: 2048
+#split_batches: true
+reader_worker: auto
+online_cache_path: saves/test/pretrain/online_cache
+preprocessing_num_workers: 1
+preprocessing_batch_size: 128
+
+# training
+task: pretrain
+# 一个step的token数 batch_size * gradient_accumulation_steps * max_seq_length 24*8*8*2048=3145728
+max_steps: 128000  
+per_device_train_batch_size: 4 #24
+gradient_accumulation_steps: 2
+#warmup_ratio: 0.01
+warmup_steps: 1200
+lr_scheduler_type: constant_with_warmup #constant
+logging_steps: 1
+learning_rate: 2.0e-4 # 模型越大，学习率越小，GPT3从125M的 6.0e-4，降低到175B的 0.6e-4
+bf16: true
+deepspeed: examples/deepspeed/ds_z2_config.json
+gradient_checkpointing: true
+
+# other
+seed: 19990723
+save_steps: 500
+output_dir: saves/tests/pretrain
+save_total_limit: 10
+report_to: none #swanlab
+log_level: info
+
+# custom
+loss: 
+  type: domain_loss
+  domain_mapping:
+    1: "origin"
+    2: "copy"
+    

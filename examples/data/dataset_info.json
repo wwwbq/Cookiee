@@ -1,0 +1,82 @@
+{
+    "Llava-1.5-pretrain": {
+        "file": "XXX/blip_laion_cc_sbu_558k_cleaned.json",
+        "image_folder": "XXX",
+        "format": "content",
+        "key": {
+            "text": "content",
+            "images": "image"
+        }
+    },
+    "Llava-1.5-sft": {
+        "file": "XXX/llava_v1_5_mix665k_clean.json",
+        "image_folder": "XXX",
+        "format": "sharegpt",
+        "key":{
+            "messages": "conversations",
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt",
+            "images": "image"
+        }
+    },
+    "llm_pretrain_demo": {
+        "file": "examples/data/llm_pretrain_demo.jsonl",
+        "format": "content",
+        "domain": 1,
+        "key": {
+            "text": "text"
+        }
+    },
+    "llm_pretrain_demo_copy": {
+        "file": "examples/data/llm_pretrain_demo.jsonl",
+        "reader": "jsonl_generator",
+        "domain": 2,
+        "format": "content",
+        "key": {
+            "text": "text"
+        }
+    },
+    "llm_sft_demo": {
+        "file": "examples/data/llm_sft_demo.json",
+        "format": "alpaca",
+        "midtrain_template": "none",
+        "key": {
+            "prompt": "instruction",
+            "response": "output"
+        }
+    },
+    "vlm_pretrain_demo": {
+        "file": "examples/data/vlm_pretrain_demo.json",
+        "image_folder": "examples/data/",
+        "format": "content",
+        "key": {
+            "text": "content",
+            "images": "images"
+        }
+    },
+    "vlm_sft_demo": {
+        "file": "examples/data/vlm_sft_demo.json",
+        "image_folder": "examples/data/",
+        "format": "sharegpt",
+        "key": {
+            "messages": "conversations",
+            "role_tag": "role",
+            "content_tag": "content",
+            "user_tag": "user",
+            "assistant_tag": "assistant",
+            "imagess": "image"
+        }
+    },
+    "vlm_preference_demo": {
+        "file": "examples/data/vlm_preference_demo.json",
+        "image_folder": "examples/data/",
+        "format": "content",
+        "key": {
+            "chosen": "chosen",
+            "rejected": "rejected",
+            "images": "images"
+        }
+    }
+}

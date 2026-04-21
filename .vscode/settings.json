@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "/home/work/workspace/helper" // 替换成你 helper 库的绝对路径
+        // 或者使用 "${workspaceFolder}/helper_library" 这样的相对路径
+    ]
+}

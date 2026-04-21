@@ -1,0 +1,47 @@
+{
+    "model": {
+        "CookieeVLM-lr5e4": {
+            "class": "CookieeVLM",
+            "model_path": "saves/cookiee-vlm/sft_lr5e4",
+            "max_new_tokens": 2048
+        }
+    },
+    "data": {
+        "MMMU_DEV_VAL": {
+            "class": "MMMUDataset",
+            "dataset": "MMMU_DEV_VAL"
+        },
+        "MMStar": {
+            "class": "ImageMCQDataset",
+            "dataset": "MMStar"
+        },
+        "MMBench_DEV_EN_V11": {
+            "class": "ImageMCQDataset",
+            "dataset": "MMBench_DEV_EN_V11"
+        },
+        "MMBench_DEV_CN_V11": {
+            "class": "ImageMCQDataset",
+            "dataset": "MMBench_DEV_CN_V11"
+        },
+        "OCRBench": {
+            "class": "OCRBench",
+            "dataset": "OCRBench"
+        },
+        "MathVista_MINI": {
+            "class": "MathVista",
+            "dataset": "MathVista_MINI"
+        },
+        "HallusionBench": {
+            "class": "ImageYORNDataset",
+            "dataset": "HallusionBench"
+        },
+        "MMVet": {
+            "class": "MMVet",
+            "dataset": "MMVet"
+        },
+        "AI2D_TEST": {
+            "class": "ImageMCQDataset",
+            "dataset": "AI2D_TEST"
+        }
+    }
+}

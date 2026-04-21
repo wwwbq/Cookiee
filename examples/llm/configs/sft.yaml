@@ -1,0 +1,36 @@
+# model
+model: Qwen/Qwen2.5-1.5B
+#think: true
+
+# dataset
+dataset_dir: examples/data
+dataset: llm_sft_demo
+max_seq_length: 2048
+reader_worker: auto
+preprocessing_num_workers: 1 #512
+preprocessing_batch_size: 128 #1024
+#online_cache_path: saves/tests/pretrain/online_cache
+
+# training
+task: sft
+num_train_epochs: 3
+per_device_train_batch_size: 4 #24
+gradient_accumulation_steps: 2
+
+#warmup_ratio: 0.01
+warmup_steps: 200
+learning_rate: 1.0e-5 # 模型越大，学习率越小，GPT3从125M的 6.0e-4，降低到175B的 0.6e-4
+lr_scheduler_type: cosine #constant constant_with_warmup cosine cosine_with_min_lr
+
+bf16: true
+logging_steps: 1
+deepspeed: examples/deepspeed/ds_z2_config.json
+gradient_checkpointing: true
+
+# other
+seed: 19990723
+save_steps: 500
+output_dir: saves/test/sft
+save_total_limit: 5
+report_to: none #swanlab
+log_level: info

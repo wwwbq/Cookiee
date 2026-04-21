@@ -1,0 +1,47 @@
+{
+    "model": {
+        "llava-vlm": {
+            "class": "LlavaVLM",
+            "model_path": "saves/llava/sft",
+            "max_new_tokens": 2048
+        }
+    },
+    "data": {
+        "MMMU_DEV_VAL": {
+            "class": "MMMUDataset",
+            "dataset": "MMMU_DEV_VAL"
+        },
+        "ScienceQA_VAL": {
+            "class": "ImageMCQDataset",
+            "dataset": "ScienceQA_VAL"
+        },
+        "MME": {
+            "class": "ImageYORNDataset",
+            "dataset": "MME"
+        },
+        "VizWiz": {
+            "class": "VizWiz",
+            "dataset": "VizWiz"
+        },
+        "MMBench_DEV_EN": {
+            "class": "ImageMCQDataset",
+            "dataset": "MMBench_DEV_EN"
+        },
+        "MMBench_DEV_CN": {
+            "class": "ImageMCQDataset",
+            "dataset": "MMBench_DEV_CN"
+        },
+        "TextVQA_VAL": {
+            "class": "ImageVQADataset",
+            "dataset": "TextVQA_VAL"
+        },
+        "POPE": {
+            "class": "ImageYORNDataset",
+            "dataset": "POPE"
+        },
+        "GQA_TestDev_Balanced": {
+            "class": "ImageVQADataset",
+            "dataset": "GQA_TestDev_Balanced"
+        }
+    }
+}

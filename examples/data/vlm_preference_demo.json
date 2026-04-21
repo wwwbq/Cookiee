@@ -1,0 +1,32 @@
+[
+    {
+        "chosen": "<image>They're Kane and Gretzka from Bayern Munich.",
+        "rejected": "<image>They're not Kane and Gretzka from Bayern Munich.",
+        "images": "mllm_demo_data/1.jpg"
+    },
+    {
+        "chosen": "<image>He's Thomas Muller from Bayern Munich.",
+        "rejected": "<image>He's not Thomas Muller from Bayern Munich.",
+        "images": ["mllm_demo_data/2.jpg"]
+    },
+    {
+        "chosen": "<image>Chinese astronaut Gui Haichao is giving a speech.",
+        "rejected": "<image>Chinese astronaut Gui Haichao is sitting.",
+        "images": "mllm_demo_data/3.jpg"
+    },
+    {
+        "chosen": "<image>他们是拜仁慕尼黑的凯恩和格雷茨卡。",
+        "rejected": "<image>他们不是拜仁慕尼黑的凯恩和格雷茨卡。",
+        "images": "mllm_demo_data/1.jpg"
+    },
+    {
+        "chosen": "<image>他是来自拜仁慕尼黑的托马斯·穆勒。",
+        "rejected": "<image>他不是来自拜仁慕尼黑的托马斯·穆勒。",
+        "images": "mllm_demo_data/2.jpg"
+    },
+    {
+        "chosen": "<image>中国宇航员桂海潮正在讲话。",
+        "rejected": "<image>中国宇航员桂海潮正在坐着。",
+        "images": ["mllm_demo_data/3.jpg"]
+    }
+]

@@ -1,0 +1,37 @@
+vlm:
+  vision_model:
+    type: qwen_vit
+    weight: /root/paddlejob/wangbingquan/hf_hub/menglc/DFN-Huge-Qwen2VL-7B
+  #tokenizer: /root/paddlejob/wangbingquan/hf_hub/Qwen/Qwen2-VL-7B
+  text_model: /root/paddlejob/wangbingquan/hf_hub/Qwen/Qwen2.5-7B
+  image_processor: /root/paddlejob/wangbingquan/hf_hub/Qwen/Qwen2-VL-7B
+  image_token: <|image_pad|>
+  min_pixels: 3136 # 56*56
+  max_pixels: 1048576 # 1024 * 1024
+
+dataset: VLM-150M-subset1M-long-caption
+max_seq_length: 4096
+preprocessing_num_workers: 128
+preprocessing_batch_size: 1024
+overwrite_cache: true
+
+task: pretrain
+num_train_epochs: 1
+#max_steps: 128000  
+per_device_train_batch_size: 16 #24
+gradient_accumulation_steps: 1
+#warmup_ratio: 0.01
+warmup_steps: 60
+lr_scheduler_type: cosine #constant cosine constant_with_warmup
+logging_steps: 10
+learning_rate: 5.0e-4 #2.0e-3
+bf16: true
+deepspeed: configs/deepspeed/ds_z2_config.json
+gradient_checkpointing: true
+
+seed: 3407
+save_steps: 2500
+output_dir: saves/cookiee-vlm/pretrain-long-caption
+save_total_limit: 5
+report_to: none #swanlab
+log_level: info

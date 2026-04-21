@@ -1,0 +1,29 @@
+model: saves/cookiee-vlm/preference_pretrain_exp23rerun
+
+dataset: Llava-1.5-sft
+max_seq_length: 4096
+preprocessing_num_workers: 128 #128
+preprocessing_batch_size: 1024 #1024
+group_by_modality_length: true
+overwrite_cache: true
+
+task: sft
+num_train_epochs: 1
+#max_steps: 128000  
+per_device_train_batch_size: 8 #24
+gradient_accumulation_steps: 1
+#warmup_ratio: 0.02
+warmup_steps: 80
+lr_scheduler_type: cosine #constant cosine constant_with_warmup
+logging_steps: 10
+learning_rate: 2.0e-5
+bf16: true
+deepspeed: configs/deepspeed/ds_z3_config.json
+gradient_checkpointing: true
+
+seed: 3407
+save_steps: 2500
+output_dir: saves/cookiee-vlm/preference-sft_exp23rerun
+save_total_limit: 5
+report_to: none #swanlab
+log_level: info

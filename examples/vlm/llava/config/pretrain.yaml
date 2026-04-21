@@ -1,0 +1,43 @@
+# model 
+vlm:
+  vision_model:
+    type: clip
+    weight:XXX/clip-vit-large-patch14-336
+  image_processor:
+    type: llava
+    do_pad: false
+  text_model: XXX/vicuna-7b-v1.5
+  image_token: <image>
+  
+new_special_tokens:
+  - <image>
+
+# dataset
+dataset_dir: examples/data
+dataset: Llava-1.5-pretrain
+max_seq_length: 2048
+preprocessing_num_workers: 16
+preprocessing_batch_size: 128
+overwrite_cache: true
+is_shared_file_system: true
+
+# training
+task: pretrain
+num_train_epochs: 1
+per_device_train_batch_size: 64 #24
+gradient_accumulation_steps: 1
+#warmup_ratio: 0.01
+warmup_steps: 60
+lr_scheduler_type: cosine #constant cosine constant_with_warmup
+logging_steps: 10
+learning_rate: 2.0e-3
+bf16: true
+deepspeed: examples/deepspeed/ds_z2_config.json
+gradient_checkpointing: true
+
+seed: 3407
+save_steps: 1000
+output_dir: saves/llava/pretrain
+save_total_limit: 5
+report_to: none #swanlab
+log_level: info

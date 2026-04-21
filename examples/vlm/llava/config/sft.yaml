@@ -1,0 +1,33 @@
+# model 
+model: saves/llava/pretrain
+
+# dataset
+dataset_dir: examples/data
+dataset: Llava-1.5-sft
+max_seq_length: 2048
+preprocessing_num_workers: 16 #128
+preprocessing_batch_size: 128 #1024
+overwrite_cache: true
+is_shared_file_system: true
+group_by_modality_length: true
+
+# training
+task: sft
+num_train_epochs: 1  
+per_device_train_batch_size: 32 #24
+gradient_accumulation_steps: 1
+#warmup_ratio: 0.02
+warmup_steps: 60
+lr_scheduler_type: cosine #constant cosine constant_with_warmup
+logging_steps: 10
+learning_rate: 4.0e-5
+bf16: true
+deepspeed: examples/deepspeed/ds_z3_config.json
+gradient_checkpointing: true
+
+seed: 3407
+save_steps: 1000
+output_dir: saves/llava/sft
+save_total_limit: 5
+report_to: none #swanlab
+log_level: info
